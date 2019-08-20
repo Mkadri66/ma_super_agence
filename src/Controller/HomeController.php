@@ -16,7 +16,6 @@ class HomeController extends AbstractController {
     public function index(PropertyRepository $repository): Response {
         // Recupere les derniers biens ajoutés non vendus
         $properties = $repository->findLatest();
-        dump($properties);
         return $this->render('pages/home.html.twig', [
             'properties' => $properties
         ]);
