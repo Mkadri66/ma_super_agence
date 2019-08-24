@@ -5,9 +5,16 @@
 {% block body %}
     <div class="jumbotron text-center">
         <h1> Tous nos biens </h1>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam asperiores ex perspiciatis a. Nobis cumque enim eum, error hic ea velit sed molestiae, consequatur dolor, sequi ducimus suscipit laudantium dolore!
-        </p>
+        <div class="row">
+        {% for property in properties %}
+            <div class="col-md-4">
+                {% include('property/_property.html.twig') %}
+            </div> 
+        {% endfor %}
+        </div>
+        {# display navigation #}
+        <div class="navigation">
+            {{ knp_pagination_render(properties) }}
+        </div>
     </div>
-
 {% endblock %}

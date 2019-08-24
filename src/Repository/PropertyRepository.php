@@ -21,13 +21,11 @@ class PropertyRepository extends ServiceEntityRepository
     }
 
     /**
-    * @return Property[] Returns an array of visible Properties
+    * @return Query
     */
 
-    public function findAllVisible(): array{
-        return $this->findVisibleQuery()
-            ->getQuery()
-            ->getResult();
+    public function findAllVisibleQuery(){
+        return $this->findVisibleQuery()->getQuery();
     }
 
     /**
