@@ -17,6 +17,13 @@ class PropertySearch {
      */
     private $minSurface;
 
+
+    /**
+     * @var int|null
+     * @Assert\Range(min=1, max=15)
+     */
+    private $minRooms;
+
     /**
      * Get the value of maxPrice
      *
@@ -61,6 +68,30 @@ class PropertySearch {
     public function setMinSurface($minSurface)
     {
         $this->minSurface = $minSurface;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of minRoom
+     *
+     * @return  int|null
+     */ 
+    public function getMinRooms()
+    {
+        return $this->minRooms;
+    }
+
+    /**
+     * Set the value of minRoom
+     *
+     * @param  int|null  $minRoom
+     *
+     * @return  self
+     */ 
+    public function setMinRooms($minRooms)
+    {
+        $this->minRooms = $minRooms;
 
         return $this;
     }

@@ -27,7 +27,13 @@ class PropertySearchType extends AbstractType
                 'label' => false,
                 'attr' => [
                     'placeholder' => 'Surface minimale',
-
+                ]
+            ])
+            ->add('minRooms', IntegerType::class,[
+                'required' => false,
+                'label' => false,
+                'attr' => [
+                    'placeholder' => 'Nb minimal de pièces',
                 ]
             ]);
     }
