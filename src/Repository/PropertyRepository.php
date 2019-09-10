@@ -42,6 +42,14 @@ class PropertyRepository extends ServiceEntityRepository
             $query = $query->andWhere('p.rooms >= :minrooms')
                             ->setParameter('minrooms', $search->getMinRooms());
         }
+        if($search->getOptions() != null && $search->getOptions()->count() > 0 ){
+            foreach($search->getOptions() as $k => $option){
+                $query = $query
+                            ->andWhere(":option$k MEMBER of p.options")
+                            ->setParameter("option$k", $option);
+
+            } 
+        } 
         return $query->getQuery();
     }
 
